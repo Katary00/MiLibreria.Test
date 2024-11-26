@@ -14,11 +14,13 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-        
+        with:
+          submodules: true  # Inicializa y actualiza los submÃ³dulos
+
       - name: Setup .NET SDK
         uses: actions/setup-dotnet@v2
         with:
-          dotnet-version: '8.0.402'  # Asegúrate de usar una versión compatible con .NET 8.0
+          dotnet-version: '8.0.x'  # AsegÃºrate de usar una versiÃ³n compatible con .NET 8.0
 
       - name: Restore dependencies
         run: dotnet restore
